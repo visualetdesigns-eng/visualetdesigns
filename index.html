@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Visualet Designs — Nathan Salamanca</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Visualet Designs portfolio — Freelance graphic designer Nathan Salamanca specializing in branding, logos, and social media design.">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.headshot-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+:root {
+  --violet-deep: #2b075a;
+  --purple-electric: #7b2cff;
+  --lavender-soft: #c77dff;
+  --magenta-neon: #ff3bbf;
+}
+
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.main-bg {
+  background: url("background.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (min-width: 769px) {
+  .main-bg {
+    background-attachment: fixed;
+  }
+}
+
+.overlay {
+  background: rgba(8, 4, 20, 0.88);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* FLOATING BLOBS */
+.blob {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  filter: blur(90px);
+  opacity: 0.6;
+  animation: float 12s ease-in-out infinite;
+  z-index: 0;
+}
+
+.blob.one {
+  top: 10%;
+  left: -120px;
+  background: radial-gradient(circle, var(--magenta-neon), transparent 70%);
+}
+
+.blob.two {
+  bottom: 5%;
+  right: -150px;
+  background: radial-gradient(circle, var(--purple-electric), transparent 70%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-50px); }
+  100% { transform: translateY(0px); }
+}
+
+/* NAVBAR */
+
+nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1300px;
+  background: rgba(25, 14, 55, 0.55);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 18px 60px rgba(0,0,0,0.55),
+    0 0 100px rgba(123,44,255,0.25);
+
+  overflow: hidden;
+}
+
+/* GLASS SHINE SWEEP */
+nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.28),
+    transparent 60%
+  );
+  animation: navShine 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes navShine {
+  from { transform: translateX(-140%); }
+  to   { transform: translateX(140%); }
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-left img {
+  width: 68px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255,59,191,0.6));
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ff3bbf;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 6px 20px rgba(0,0,0,0.35);
+  transition: 0.25s ease;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,59,191,0.45);
+}
+
+/* SECTIONS */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 100px 8%;
+  position: relative;
+  z-index: 2;
+  scroll-margin-top: 120px;
+}
+/* ABOUT LAYOUT */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.about-text {
+  max-width: 700px;
+}
+
+.headshot-placeholder {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(40, 22, 70, 0.35);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.6),
+    0 0 80px rgba(255,59,191,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff3bbf;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle shine on headshot */
+.headshot-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18), transparent 50%);
+  pointer-events: none;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 750px;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* HERO */
+/* HERO */
+.hero {
+  min-height: auto;
+  padding-top: 140px;
+  padding-bottom: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* HERO GLASS ACCENT (SUBTLE IOS STYLE) */
+.hero-glass {
+  width: 100%;
+  max-width: 620px;
+  padding: 38px 44px;
+  border-radius: 28px;
+  background: rgba(40, 22, 70, 0.28);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),
+    0 0 120px rgba(255,59,191,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* HERO RIGHT TESTIMONIAL GLASS */
+.hero-wrap {
+  display: flex;
+  gap: 80px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.testimonial-glass {
+  width: 100%;
+  max-width: 460px;
+  min-height: 460px;
+  padding: 44px 42px;
+  border-radius: 32px;
+
+  background: rgba(40, 22, 70, 0.32);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  box-shadow:
+    0 40px 140px rgba(0,0,0,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    0 0 120px rgba(255,59,191,0.35);
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: slowFloatSmall 10s ease-in-out infinite;
+}
+
+/* animated light sweep */
+.testimonial-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+    transparent 30%,
+    rgba(255,255,255,0.18),
+    transparent 60%);
+  animation: sweep 6s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes sweep {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(120%); }
+}
+
+.testimonial {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: #f3ecf9;
+  margin-bottom: 28px;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 10px;
+  color: #ff3bbf;
+}
+
+/* hover glow follow */
+.testimonial-glass::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,59,191,0.35), transparent 70%);
+  filter: blur(80px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.testimonial-glass:hover::after {
+  opacity: 1;
+}
+
+/* soft highlight sheen */
+.hero-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.04),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ambient glow behind text */
+.hero-glass::after {
+  content: "";
+  position: absolute;
+  left: -80px;
+  top: 120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255,59,191,0.22), transparent 70%);
+  filter: blur(120px);
+  z-index: -1;
+}
+
+
+/* subtle floating glow behind hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: 120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255,59,191,0.25), transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* HERO RIGHT BACKGROUND ACCENT */
+.hero-bg-accent {
+  position: absolute;
+  right: -220px;
+  top: 120px;
+  width: 520px;
+  height: 520px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(123,44,255,0.25), transparent 70%),
+    radial-gradient(circle at 70% 60%, rgba(255,59,191,0.22), transparent 70%);
+  filter: blur(140px);
+  animation: slowFloat 14s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes slowFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slowFloatSmall {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* SECTION ACCENT LINE */
+.section-accent {
+  width: 90px;
+  height: 4px;
+  margin: 14px 0 30px 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg,
+    var(--magenta-neon),
+    var(--lavender-soft),
+    var(--purple-electric));
+  box-shadow: 0 0 28px rgba(255,59,191,0.8);
+}
+
+/* SERVICE TIER COLOR STRIPS */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 34px 34px 0 0;
+}
+
+.service-card[data-tier="silver"]::before {
+  background: linear-gradient(90deg, #cfd9df, #9b9bff);
+  box-shadow: 0 0 18px rgba(200,200,255,0.6);
+}
+
+.service-card[data-tier="gold"]::before {
+  background: linear-gradient(90deg, #ffd36a, #ff9f2e);
+  box-shadow: 0 0 22px rgba(255,200,80,0.7);
+}
+
+.service-card[data-tier="diamond"]::before {
+  background: linear-gradient(90deg, #7b2cff, #ff3bbf);
+  box-shadow: 0 0 26px rgba(255,59,191,0.8);
+}
+
+/* TESTIMONIAL MICRO TILT */
+.testimonial-glass:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+}
+
+.hero-logo {
+  width: 150px;
+  margin-bottom: 34px;
+  filter: drop-shadow(0 0 50px rgba(255,59,191,1));
+}
+
+.hero h1 {
+  font-size: 56px;
+  background: linear-gradient(120deg,
+    var(--magenta-neon) 0%,
+    var(--lavender-soft) 35%,
+    var(--purple-electric) 70%,
+    var(--magenta-neon) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.6px;
+  text-shadow: 0 0 35px rgba(255,59,191,0.35);
+}
+
+.hero h3 {
+  margin-top: 10px;
+  color: #ccc;
+  font-weight: normal;
+}
+
+/* GLOW LINE */
+.glow-line {
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+  margin: 35px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 25px #ff3bbf;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 26px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.btn {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#0b0616, #0b0616) padding-box,
+    linear-gradient(90deg, #ff3bbf, #7b2cff) border-box;
+  padding: 14px 34px;
+  border-radius: 40px;
+  color: #ff3bbf;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 6px 25px rgba(0,0,0,0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(120deg,
+    var(--magenta-neon),
+    var(--lavender-soft),
+    var(--purple-electric)) padding-box;
+  color: black;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 46px rgba(255,59,191,0.7);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,59,191,0.6);
+}
+
+/* GLASS CARD */
+.glass {
+  background: rgba(20, 10, 40, 0.75);
+  backdrop-filter: blur(22px) saturate(160%);
+  border-radius: 34px;
+  padding: 34px;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass .buttons {
+  margin-top: 28px;
+  justify-content: center;
+}
+
+.glass h3 {
+  margin-bottom: 14px;
+  font-size: 22px;
+  background: linear-gradient(120deg,
+    var(--magenta-neon),
+    var(--lavender-soft),
+    var(--purple-electric));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.4px;
+  text-shadow: 0 0 18px rgba(255,59,191,0.35);
+}
+
+.glass p {
+  margin-top: 16px;
+  margin-bottom: 22px;
+}
+
+.glass p br + ✔,
+.glass p {
+  color: #e8ddf5;
+}
+
+.glass strong {
+  color: #ff3bbf;
+  font-weight: 600;
+}
+/* LOGO PACKAGES OVERRIDE */
+.logo-packages {
+  grid-column: span 3;
+}
+
+@media (max-width: 768px) {
+  .about-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .headshot-placeholder {
+    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+  }
+  .logo-packages {
+    grid-column: span 1;
+  }
+}
+
+/* PORTFOLIO GLASS FRAME */
+.portfolio-frame {
+  margin-top: 40px;
+  padding: 50px 50px 60px 50px;
+  border-radius: 42px;
+
+  background: rgba(30, 16, 60, 0.35);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+
+  border: 1px solid rgba(255,255,255,0.10);
+
+  box-shadow:
+    0 40px 140px rgba(0,0,0,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 0 160px rgba(123,44,255,0.25);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.02),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* PORTFOLIO GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 45px;
+  margin-top: 20px;
+}
+
+/* LOAD MORE PORTFOLIO */
+.portfolio-controls {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.project-hidden {
+  display: none;
+}
+
+/* 🔥 CAROUSEL */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  margin-bottom: 28px;
+  width: 100%;
+  aspect-ratio: 4 / 5;          /* 1080 × 1350 ratio */
+  max-height: 540px;           /* Taller display on desktop */
+  background: transparent;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* ARROWS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 12, 40, 0.55);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 30;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(14px) saturate(160%);
+}
+
+.carousel-btn.left { left: 14px; }
+.carousel-btn.right { right: 14px; }
+
+.carousel-btn:hover {
+  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+  color: black;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 12px 30px rgba(255,59,191,0.55);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* BADGE */
+.badge {
+  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+  color: black;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  max-width: fit-content;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* CONTACT */
+.contact-links a {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 22px;
+  margin-top: 25px;
+  color: #ff3bbf;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  color: white;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+  background: rgba(0,0,0,0.4);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .hero h1 { 
+    font-size: 38px; 
+  }
+
+  section { 
+    padding: 80px 6%; 
+  }
+
+  .hero {
+    padding-top: 160px;
+  }
+
+  .hero-glass {
+    padding: 30px 26px;
+    max-width: 100%;
+    border-radius: 24px;
+  }
+
+  .hero-wrap {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .testimonial-glass {
+    width: 100%;
+    min-height: auto;
+    padding: 32px 28px;
+  }
+}
+
+/* SUBTLE GLASS SHEEN */
+nav::before,
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(255,255,255,0.12), transparent 40%);
+  pointer-events: none;
+}
+
+/* IOS-STYLE GLASS MOTION */
+nav {
+  will-change: transform;
+}
+
+nav:hover {
+  backdrop-filter: blur(28px) saturate(200%);
+}
+
+.glass:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.55);
+}
+
+@keyframes dockFloat {
+  0% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+  100% { transform: translateX(-50%) translateY(0px); }
+}
+
+nav {
+  animation: dockFloat 10s ease-in-out infinite;
+}
+
+/* =========================
+   🔥 MOBILE POLISH UPGRADE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  nav {
+    padding: 10px 5%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .hero-wrap {
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .hero-glass {
+    padding: 28px 24px;
+    border-radius: 22px;
+  }
+
+  .hero-logo {
+    width: 120px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero h3 {
+    font-size: 15px;
+  }
+
+  .testimonial-glass {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 26px;
+    border-radius: 24px;
+  }
+
+  section {
+    padding: 70px 6%;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .portfolio-frame {
+    padding: 34px 24px 44px 24px;
+    border-radius: 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .carousel {
+    max-height: 300px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  /* FIX SERVICE CARD OVERLAP */
+  .services {
+    grid-auto-rows: auto;
+  }
+
+  .glass {
+    margin-bottom: 24px;
+  }
+
+  /* Prevent large logo package container from spanning columns on mobile */
+  .glass[style] {
+    grid-column: span 1 !important;
+  }
+
+  .glass {
+    padding: 26px;
+    border-radius: 26px;
+  }
+
+  #services .glass h2 {
+    font-size: 26px;
+  }
+
+  #services .services .glass {
+    padding: 24px;
+  }
+
+  .buttons {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    min-width: 130px;
+    padding: 12px 26px;
+    font-size: 14px;
+  }
+
+  .contact-links a {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+}
+/* MOBILE CAROUSEL PORTRAIT FIX */
+@media (max-width: 768px) {
+  .carousel {
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
+  }
+}
+/* REDUCE MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* FULLSCREEN MODAL (CERT + CAROUSEL) */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+/* PREVIEW NOTE (CLICK TO VIEW FULL PREVIEW) */
+.preview-note {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: rgba(20,12,40,0.75);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ff3bbf;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  pointer-events: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 18px;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  color: #ff3bbf;
+}
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(20,12,40,0.6);
+  backdrop-filter: blur(12px);
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 5100;
+  transition: 0.25s ease;
+}
+
+.modal-prev { left: 40px; }
+.modal-next { right: 40px; }
+
+.modal-nav:hover {
+  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+  color: black;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 14px 40px rgba(255,59,191,0.6);
+}
+.modal.cert-only .modal-prev,
+.modal.cert-only .modal-next {
+  display: none;
+}
+.carousel-track img {
+  cursor: zoom-in;
+}
+</style>
+</head>
+
+<body>
+<div class="main-bg">
+<div class="overlay">
+
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <img src="logo.png" loading="eager" decoding="async">
+    <strong>Visualet Designs</strong>
+  </div>
+  <div class="nav-links">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg-accent"></div>
+  <div class="hero-wrap">
+
+    <div class="hero-glass">
+      <img src="logo.png" class="hero-logo" style="width:180px;" loading="lazy" decoding="async">
+      <h1>Nathan Salamanca</h1>
+      <h3>Founder of Visualet Designs</h3>
+      <p>Freelance Graphic Designer • Logos • Branding • Social Media</p>
+
+      <div class="glow-line"></div>
+
+      <div class="buttons">
+        <a href="#portfolio" class="btn">View Portfolio</a>
+        <a href="#contact" class="btn">Hire Me</a>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL GLASS -->
+    <div class="testimonial-glass">
+      <h3 style="margin-bottom:20px; font-size:22px; letter-spacing:0.4px;">What Clients Say</h3>
+
+      <div class="testimonial">
+        “Visualet Designs completely transformed our brand.  
+        The logo and visuals instantly made us look professional.”
+        <strong>— Aqualifts Founder</strong>
+      </div>
+
+      <div class="testimonial">
+        “Fast delivery, amazing communication, and designs that actually convert.”
+        <strong>— Looma Candles</strong>
+      </div>
+
+      <div class="testimonial">
+        “One of the cleanest designers I’ve worked with. Highly recommend.”
+        <strong>— Startup Client</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+
+<section id="portfolio">
+<h2>Featured Projects</h2>
+<p style="max-width:720px; margin-bottom:20px; color:#ccc;">
+A selection of branding, logo, and visual design projects focused on clean aesthetics, strong identity, and real-world performance.
+</p>
+<div class="section-accent"></div>
+
+<div class="portfolio-frame">
+  <div class="grid">
+
+<!-- PROJECT 1 -->
+<div class="glass">
+  <div class="badge">FEATURED</div>
+  <h3>Aqualifts — Custom Branding & Carousel</h3>
+
+  <div class="carousel" data-carousel>
+      <div class="preview-note">Click to view full preview 
+        
+      </div>
+    <div class="carousel-track">
+      <img src="aqua1.jpg" loading="lazy" decoding="async">
+      <img src="aqua2.jpg" loading="lazy" decoding="async">
+      <img src="aqua3.jpg" loading="lazy" decoding="async">
+      <img src="aqua4.jpg" loading="lazy" decoding="async">
+      <img src="aqua5.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+    
+  </div>
+
+  <p>Full brand identity and carousel campaign designed for a performance hydration drink targeting athletes and gym-goers.  
+Focused on bold visuals, product clarity, and high-conversion social content.</p>
+
+  <div class="buttons">
+    <a href="https://www.instagram.com/p/DC2zkDbPEEZ/" target="_blank" class="btn">View Post</a>
+    <a href="#contact" class="btn">Start a Project</a>
+  </div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="glass">
+  <h3>Looma Candles — Brand Identity</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="looma1.jpg" loading="lazy" decoding="async">
+      <img src="looma2.jpg" loading="lazy" decoding="async">
+      <img src="looma3.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p> <p>
+Brand identity system developed for a lifestyle candle brand, including logo design, color palette, packaging concepts, and social media visuals.
+</p></p>
+
+  <div class="buttons">
+    <a href="https://www.instagram.com/p/DO2UEJGkdG3/" target="_blank" class="btn">View Post</a>
+    <a href="#contact" class="btn">Start a Project</a>
+  </div>
+</div>
+
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3>Grove Tea House — Packaging & Logo Design</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="grove1.jpg" loading="lazy" decoding="async">
+      <img src="grove2.jpg" loading="lazy" decoding="async">
+      
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p>Custom logo and pouch packaging design for a specialty tea brand focused on premium, natural presentation.
+
+This project involved creating a custom logo identity and extending it into a clean, modern packaging system designed to communicate quality, freshness, and trust. The layout was carefully structured to balance branding, flavor information, and visual hierarchy for strong shelf presence and easy readability.
+
+Final deliverables were prepared as print-ready packaging and logo files, optimized for production and future flavor variations..</p>
+</div>
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3>Premium Service Guaranteed (PSG) — Logo & Business Card Design</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="psg2.jpg" loading="lazy" decoding="async">
+      <img src="psg1.jpg" loading="lazy" decoding="async">
+      <img src="psg3.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p> Custom logo and business card design for a mobile auto detailing brand focused on professionalism, trust, and premium service.
+
+This project included developing a custom logo identity that reflects quality, reliability, and attention to detail, followed by a matching business card system designed for strong first impressions and consistent branding across client interactions.
+
+Final deliverables were prepared as print-ready logo and business card files, optimized for branding, marketing, and long-term use.</p>
+</div>
+
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3> Bonehead Donuts — Full Brand Identity & Packaging
+</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="bone1.jpg" loading="lazy" decoding="async">
+      <img src="bone2.jpg" loading="lazy" decoding="async">
+      <img src="bone3.jpg" loading="lazy" decoding="async">
+      <img src="bone4.jpg" loading="lazy" decoding="async">
+      <img src="bone5.jpg" loading="lazy" decoding="async">
+      <img src="bone6.jpg" loading="lazy" decoding="async">
+       <img src="bone7.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p>This project included a custom logo design, full branding system, and extended applications across donut packaging, box design, cup design, and branded merchandise. I also created social media graphics and carousel designs to ensure visual consistency across digital platforms.
+
+Final deliverables were prepared as print-ready packaging files and digital assets, built to strengthen brand recognition both in-store and online.</p>
+</div>
+
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3>Aero Wave — Concept Bluetooth Speaker</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="aero1.jpg" loading="lazy" decoding="async">
+      <img src="aero2.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p>A modern concept product design focused on sleek aesthetics, portability, and premium feel.
+
+This project explored logo design, product styling, and visual branding, showcasing how clean form and bold design can elevate everyday tech. Created as a concept piece for Visualet Designs to demonstrate product-focused branding and creative direction.</p>
+</div>
+
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3> Fur Members Only — Branding Design</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="fur1.jpg" loading="lazy" decoding="async">
+      <img src="fur2.jpg" loading="lazy" decoding="async">
+      <img src="fur3.jpg" loading="lazy" decoding="async">
+       <img src="fur4.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p>A playful yet professional branding concept designed for a pet-focused business.
+
+This project features custom logo design, brand identity development, and visual styling, crafted to feel friendly, trustworthy, and modern. Created by Visualet Designs to showcase how strong branding can connect emotionally with pet owners while remaining polished and scalable..</p>
+</div>
+
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3>Herbloom — Brand Identity & Packaging</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="her1.jpg" loading="lazy" decoding="async">
+      <img src="her2.jpg" loading="lazy" decoding="async">
+      <img src="her3.jpg" loading="lazy" decoding="async">
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p>A clean and modern branding project created to bring an herbal shampoo concept to life.
+
+This project features an elegant logo design, sleek packaging, and a cohesive brand identity, using organic inspiration, earthy tones, and refined typography to create a natural yet luxurious feel. Designed by Visualet Designs to help emerging brands stand out and connect with their audience.
+</p>
+</div>
+
+<!-- PROJECT TEMPLATE -->
+<div class="glass project-hidden">
+  <h3>Waterscape Pools & Spas Inc — Business Card Design</h3>
+
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <img src="water1.jpg" loading="lazy" decoding="async">
+      <img src="water2.jpg" loading="lazy" decoding="async">
+      
+    </div>
+    <button class="carousel-btn left">‹</button>
+    <button class="carousel-btn right">›</button>
+  </div>
+
+  <p>A professional business card design created for Waterscape Pools & Spas Inc, focusing on clarity, trust, and a clean aquatic aesthetic.
+
+The design features balanced typography, brand-aligned colors, and a polished layout, ensuring a strong first impression and a professional look that reflects the company’s quality services.
+</p>
+</div>
+
+    </div>
+  <div class="portfolio-controls">
+    <button class="btn load-more">Load More Projects</button>
+  </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<div class="section-accent"></div>
+
+<div class="about-wrap">
+
+  <div class="about-text">
+    <p>
+Hi, I’m Nathan 👋 founder of Visualet Designs. Over the past few years, I’ve been helping brands elevate their look through clean, bold, and thoughtful design. I specialize in logo design and branding, focusing on visuals that feel modern, intentional, and easy to connect with.
+
+I work with industry-level tools like Adobe Photoshop and Adobe Illustrator to create strong visual identities that help businesses look more professional and stand out with confidence. Every project I take on is approached with attention to detail and a clear design purpose — no templates, just custom work made to fit each brand.
+
+Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pushing my creative skills forward. I’m always learning, experimenting, and refining my style to deliver better work with every project.
+    </p>
+
+    <p>
+    I work with Photoshop, Illustrator, and Affinity Designer, focusing on clean branding systems and high‑impact visuals.
+    </p>
+
+    <p>
+    Outside of design I enjoy hiking, gym, cooking, and constantly pushing my creative limits.
+    </p>
+  </div>
+
+  <!-- HEADSHOT -->
+<div class="headshot-placeholder">
+  <img src="possibleheadshot.jpg" alt="Nathan Salamanca headshot">
+</div>
+
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<h2>Certifications</h2>
+<div class="section-accent"></div>
+
+<div class="services">
+
+  <div class="glass cert-card">
+    <h3>Adobe Certified Professional</h3>
+    <p><strong>Photoshop — May 21th, 2025</strong></p>
+    <p>
+    ✔ Official Adobe Certification<br>
+    ✔ Advanced Photoshop Skills<br>
+    ✔ Industry‑Recognized Credential
+    </p>
+
+    <div class="buttons">
+    <button class="btn view-cert" data-cert="cert-photoshop.jpg">View Certificate</button>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Services</h2>
+<div class="section-accent"></div>
+
+<div class="services">
+
+<div class="glass">
+<h3>Logo Design</h3>
+<p><strong>Starting at $50</strong></p>
+<p>✔ Custom Concepts<br>✔ Revisions<br>✔ Fast Delivery</p>
+</div>
+
+<div class="glass logo-packages">
+<h2 style="margin-bottom:20px;">Logo Packages</h2>
+<div class="section-accent"></div>
+
+<div class="services">
+
+<div class="glass service-card" data-tier="silver">
+<h3>🥈 Silver — $50</h3>
+<p>Clean. Simple. Perfect for side hustles or fast launches.</p>
+<p>
+✔ 1 Custom Logo<br>
+✔ 2 Revisions<br>
+✔ PNG + JPG Files<br>
+✔ Perfect for startups<br>
+✔ Budget-friendly
+</p>
+</div>
+
+<div class="glass service-card" data-tier="gold">
+<h3>🥇 Gold — $75</h3>
+<p>More concepts. More polish. Ideal for growing brands.</p>
+<p>
+✔ 2 Logo Concepts<br>
+✔ 3 Revisions<br>
+✔ PNG, JPG, PDF Files<br>
+✔ 1 Mockup Preview<br>
+✔ Polished & flexible
+</p>
+</div>
+
+<div class="glass service-card" data-tier="diamond">
+<h3>💎 Diamond — $200</h3>
+<p>The full brand starter kit. Everything you need to launch like a pro.</p>
+<p>
+✔ 2–3 Logo Concepts<br>
+✔ 4 Revisions<br>
+✔ Branding Sheet (Fonts + Colors)<br>
+✔ Mood Board<br>
+✔ Mockups + Full File Pack<br>
+✔ BONUS: IG Profile + Favicon + Business Card
+</p>
+</div>
+
+</div>
+</div>
+
+<div class="glass">
+<h3>Brand Starter Pack</h3>
+<p><strong>Starting at $150</strong></p>
+<p>✔ Logo<br>✔ Social Graphics<br>✔ Brand Identity</p>
+</div>
+
+<div class="glass">
+<h3>Social Media Design</h3>
+<p><strong>$50 per design</strong></p>
+<p>✔ Instagram<br>✔ Flyers<br>✔ Promo Content</p>
+</div>
+
+<div class="glass">
+  <h3>Business Cards</h3>
+  <p><strong>Design • Print • Ship</strong></p>
+  <p>✔ Front & Back Design<br>✔ Print-Ready Files<br>✔ Shipping Included</p>
+</div>
+
+<div class="glass">
+  <h3>Product Packaging Design</h3>
+  <p><strong>Custom Packaging</strong></p>
+  <p>✔ Box / Label Design<br>✔ Print-Ready Layouts<br>✔ Brand Matching</p>
+</div>
+
+<div class="glass">
+  <h3>Flyer / Poster Design</h3>
+  <p><strong>Promotional Graphics</strong></p>
+  <p>✔ Event Flyers<br>✔ Posters<br>✔ Social Versions Included</p>
+</div>
+
+<div class="glass">
+  <h3>Menu Design</h3>
+  <p><strong>Restaurants & Cafes</strong></p>
+  <p>✔ Clean Layouts<br>✔ Print + Digital Versions<br>✔ Brand Styled</p>
+</div>
+
+<div class="glass">
+  <h3>Video Design</h3>
+  <p><strong>Short-Form & Promo</strong></p>
+  <p>✔ Reels / Shorts<br>✔ Motion Graphics<br>✔ Brand Overlays</p>
+</div>
+
+<div class="glass">
+  <h3>Invoice Design</h3>
+  <p><strong>Professional Templates</strong></p>
+  <p>✔ Custom Layout<br>✔ Editable Format<br>✔ Brand Colors</p>
+</div>
+
+<div class="glass">
+  <h3>Email Signature Design</h3>
+  <p><strong>Clean & Modern</strong></p>
+  <p>✔ Clickable Links<br>✔ Logo + Social Icons<br>✔ Multi-Format Export</p>
+</div>
+
+<div class="glass">
+  <h3>Social Media Graphics / YouTube Banner</h3>
+  <p><strong>Channel & Profile Branding</strong></p>
+  <p>✔ Profile Banners<br>✔ Cover Art<br>✔ Platform Optimized</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Let’s Work Together</h2>
+<div class="section-accent"></div>
+<p>Ready to elevate your brand? I usually respond within 24 hours.</p>
+
+<div class="contact-links">
+<a href="mailto:visualetdesigns@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+<a href="https://instagram.com/visualetdesigns" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+</div>
+
+<div class="cta">
+  <div class="buttons">
+    <a href="#contact" class="btn">Hire Me</a>
+    <a href="#portfolio" class="btn">View Work</a>
+  </div>
+</div>
+</section>
+
+<footer>
+© 2026 Visualet Designs — Designed by Nathan Salamanca
+ </footer>
+
+<!-- CERTIFICATE MODAL -->
+<div id="cert-modal" class="modal">
+  <button class="modal-nav modal-prev">‹</button>
+  <span class="modal-close">&times;</span>
+  <img id="cert-image" src="">
+  <button class="modal-nav modal-next">›</button>
+</div>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = track.querySelectorAll('img');
+  const leftBtn = carousel.querySelector('.carousel-btn.left');
+  const rightBtn = carousel.querySelector('.carousel-btn.right');
+
+  let index = 0;
+
+  function update() {
+    const width = carousel.offsetWidth;
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
+
+  rightBtn.onclick = () => {
+    index = (index + 1) % slides.length;
+    update();
+  };
+
+  leftBtn.onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    update();
+  };
+
+  window.addEventListener('resize', update);
+  update();
+});
+
+document.querySelectorAll('.testimonial-glass').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--x', `${x}px`);
+    card.style.setProperty('--y', `${y}px`);
+  });
+});
+
+/* LOAD MORE PROJECTS */
+const loadBtn = document.querySelector('.load-more');
+if (loadBtn) {
+  loadBtn.addEventListener('click', () => {
+    document.querySelectorAll('.project-hidden').forEach(card => {
+      card.classList.remove('project-hidden');
+    });
+    loadBtn.style.display = 'none';
+  });
+}
+/* CERTIFICATE VIEWER */
+const certModal = document.getElementById('cert-modal');
+const certImage = document.getElementById('cert-image');
+const certClose = certModal.querySelector('.modal-close');
+
+document.querySelectorAll('.view-cert').forEach(btn => {
+  btn.addEventListener('click', () => {
+    certModal.classList.add('cert-only');
+    certImage.src = btn.dataset.cert;
+    certModal.style.display = 'flex';
+  });
+});
+
+certClose.onclick = () => {
+  certModal.style.display = 'none';
+  certModal.classList.remove('cert-only');
+};
+certModal.onclick = e => {
+  if (e.target === certModal) certModal.style.display = 'none';
+};
+
+/* FULLSCREEN CAROUSEL PREVIEW */
+let modalImages = [];
+let modalIndex = 0;
+
+function openModal(images, index) {
+  certModal.classList.remove('cert-only');
+  modalImages = images;
+  modalIndex = index;
+  certImage.src = modalImages[modalIndex].src;
+  certModal.style.display = 'flex';
+}
+
+document.querySelectorAll('.carousel-track').forEach(track => {
+  const imgs = Array.from(track.querySelectorAll('img'));
+
+  imgs.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      openModal(imgs, i);
+    });
+  });
+});
+
+const prevBtn = document.querySelector('.modal-prev');
+const nextBtn = document.querySelector('.modal-next');
+
+prevBtn.onclick = () => {
+  modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
+  certImage.src = modalImages[modalIndex].src;
+};
+
+nextBtn.onclick = () => {
+  modalIndex = (modalIndex + 1) % modalImages.length;
+  certImage.src = modalImages[modalIndex].src;
+};
+</script>
+
+</div>
+</div>
+</body>
+</html>
