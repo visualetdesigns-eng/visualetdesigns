@@ -171,8 +171,8 @@ nav::before {
 }
 
 .nav-left img {
-  width: 44px;
-  height: 44px;
+  height: 54px;
+  width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(28,77,255,0.55));
 }
@@ -558,7 +558,9 @@ p {
 }
 
 .hero-logo {
-  width: 200px;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
   margin-bottom: 30px;
   filter: drop-shadow(0 0 40px rgba(28,77,255,0.55));
 }
@@ -1096,9 +1098,10 @@ footer {
 }
 
 footer img {
-  width: 30px;
+  height: 34px;
+  width: auto;
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: 10px;
   opacity: 0.85;
 }
 
@@ -1166,7 +1169,7 @@ footer img {
   }
 
   .hero-logo {
-    width: 150px;
+    max-width: 260px;
   }
 
   .hero h3 {
@@ -1517,7 +1520,7 @@ nav {
 <!-- NAV -->
 <nav>
   <div class="nav-left">
-    <img src="logo.png" alt="Visualet Designs logo" loading="eager" decoding="async" width="44" height="44">
+    <img src="logo.png" alt="Visualet Designs logo" loading="eager" decoding="async" width="137" height="54">
     <strong>Visualet Designs</strong>
   </div>
   <div class="nav-links">
@@ -1593,17 +1596,7 @@ Beyond logos and branding — a full design-to-print product, built and shipped 
 
     <div class="spotlight-media">
       <div class="spotlight-badge">Design + Print</div>
-      <!--
-        TO ADD YOUR PRODUCT PHOTO:
-        1. Upload your canopy photo as "canopy.jpg" next to this HTML file.
-        2. Delete the <div class="media-placeholder"> block below.
-        3. Uncomment the <img> tag below it.
-      -->
-      <div class="media-placeholder">
-        <svg class="icon" aria-hidden="true"><use href="#icon-image"></use></svg>
-        <span>Add your canopy photo here — save it as <strong>canopy.jpg</strong> in this folder</span>
-      </div>
-      <!-- <img src="canopy.jpg" alt="Custom 10 by 10 foot printed event canopy" loading="lazy" decoding="async"> -->
+      <img src="canopy.jpg" alt="Custom 10 by 10 foot printed event canopy" loading="lazy" decoding="async">
     </div>
 
     <div class="spotlight-content">
