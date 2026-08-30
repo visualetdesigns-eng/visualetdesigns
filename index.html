@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Visualet Designs — Nathan Salamanca</title>
+<title>Visualet Designs — Nathan Salamanca | Design • Print • Branding</title>
 
-<meta    name="viewport"    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="description" content="Visualet Designs portfolio — Freelance graphic designer Nathan Salamanca specializing in branding, logos, and social media design.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="Visualet Designs — freelance graphic design studio led by Nathan Salamanca. Custom logos, brand identity, packaging, event canopies, and social media design.">
+<meta name="theme-color" content="#040711">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 html, body {
@@ -19,76 +25,89 @@ html, body {
   overscroll-behavior: none;
   touch-action: pan-y;
 }
-.headshot-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
+
 /* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
 }
 
 :root {
-  --violet-deep: #2b075a;
-  --purple-electric: #7b2cff;
-  --lavender-soft: #c77dff;
-  --magenta-neon: #ff3bbf;
+  /* === VISUALET 2026 PALETTE — pulled from the new logo === */
+  --void: #030509;              /* page black */
+  --navy-deep: #060a18;         /* base panel */
+  --navy-mid: #0b1226;          /* raised panel */
+  --navy-glass: rgba(9, 14, 32, 0.72);
+  --blue-electric: #1c4dff;     /* logo "V" blue */
+  --blue-bright: #4d9dff;       /* logo "V" light blue */
+  --purple-accent: #7b3bff;     /* logo "DESIGNS" purple */
+  --magenta-neon: #ff2f9c;      /* logo "ISUALET" magenta */
+  --ink-soft: #cdd3e6;
+  --ink-faint: #8891ac;
 }
 
 body {
-  background: black;
+  background: var(--void);
   color: white;
   overflow-x: hidden;
 }
 
 /* BACKGROUND */
 .main-bg {
-  background: url("background.jpg") no-repeat center center;
-  background-size: cover;
+  background:
+    radial-gradient(ellipse 900px 600px at 12% 0%, rgba(28,77,255,0.16), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 100% 30%, rgba(255,47,156,0.12), transparent 60%),
+    var(--void);
   min-height: 100vh;
   position: relative;
-}
-
-@media (min-width: 769px) {
-  .main-bg {
-    background-attachment: fixed;
-  }
 }
 
 .overlay {
-  background: rgba(8, 4, 20, 0.88);
   min-height: 100vh;
   position: relative;
+}
+
+/* BLUEPRINT GRID TEXTURE (nods to "print" side of the brand) */
+.blueprint-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(77,157,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77,157,255,0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 40%, transparent 90%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* FLOATING BLOBS */
 .blob {
   position: absolute;
-  width: 350px;
-  height: 350px;
-  filter: blur(90px);
-  opacity: 0.6;
+  width: 380px;
+  height: 380px;
+  filter: blur(100px);
+  opacity: 0.55;
   animation: float 12s ease-in-out infinite;
   z-index: 0;
 }
 
 .blob.one {
-  top: 10%;
-  left: -120px;
-  background: radial-gradient(circle, var(--magenta-neon), transparent 70%);
+  top: 8%;
+  left: -140px;
+  background: radial-gradient(circle, var(--blue-electric), transparent 70%);
 }
 
 .blob.two {
   bottom: 5%;
-  right: -150px;
-  background: radial-gradient(circle, var(--purple-electric), transparent 70%);
+  right: -160px;
+  background: radial-gradient(circle, var(--magenta-neon), transparent 70%);
 }
 
 @keyframes float {
@@ -98,7 +117,6 @@ body {
 }
 
 /* NAVBAR */
-
 nav {
   position: fixed;
   top: 18px;
@@ -106,27 +124,26 @@ nav {
   transform: translateX(-50%);
   width: 92%;
   max-width: 1300px;
-  background: rgba(25, 14, 55, 0.55);
+  background: rgba(6, 9, 22, 0.6);
   backdrop-filter: blur(26px) saturate(180%);
   -webkit-backdrop-filter: blur(26px) saturate(180%);
-  padding: 14px 48px;
+  padding: 12px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
 
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(77,157,255,0.22);
 
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.35),
-    0 18px 60px rgba(0,0,0,0.55),
-    0 0 100px rgba(123,44,255,0.25);
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 18px 60px rgba(0,0,0,0.6),
+    0 0 90px rgba(28,77,255,0.18);
 
   overflow: hidden;
 }
 
-/* GLASS SHINE SWEEP */
 nav::before {
   content: "";
   position: absolute;
@@ -135,7 +152,7 @@ nav::before {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(255,255,255,0.28),
+    rgba(255,255,255,0.16),
     transparent 60%
   );
   animation: navShine 8s linear infinite;
@@ -154,9 +171,17 @@ nav::before {
 }
 
 .nav-left img {
-  width: 68px;
-  height: auto;
-  filter: drop-shadow(0 0 10px rgba(255,59,191,0.6));
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(28,77,255,0.55));
+}
+
+.nav-left strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 15px;
 }
 
 .nav-links {
@@ -171,34 +196,33 @@ nav::before {
   border-radius: 999px;
   font-weight: 600;
   font-size: 14px;
-  color: #ff3bbf;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--blue-bright);
+  background: rgba(77,157,255,0.06);
+  border: 1px solid rgba(77,157,255,0.22);
   backdrop-filter: blur(14px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 6px 20px rgba(0,0,0,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 6px 20px rgba(0,0,0,0.35);
   transition: 0.25s ease;
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
-.nav-links a:hover {
-  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
   color: black;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255,59,191,0.45);
+  box-shadow: 0 10px 30px rgba(28,77,255,0.45);
+  outline: none;
 }
 
 /* SECTIONS */
-html {
-  scroll-behavior: smooth;
-}
-
 section {
   padding: 100px 8%;
   position: relative;
   z-index: 2;
   scroll-margin-top: 120px;
 }
+
 /* ABOUT LAYOUT */
 .about-wrap {
   display: grid;
@@ -216,29 +240,36 @@ section {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: rgba(40, 22, 70, 0.35);
+  background: rgba(11, 18, 38, 0.5);
   backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(77,157,255,0.22);
   box-shadow:
     0 30px 80px rgba(0,0,0,0.6),
-    0 0 80px rgba(255,59,191,0.25);
+    0 0 80px rgba(28,77,255,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ff3bbf;
+  color: var(--blue-bright);
   font-weight: 600;
   letter-spacing: 0.6px;
   position: relative;
   overflow: hidden;
 }
 
-/* subtle shine on headshot */
+.headshot-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
 .headshot-placeholder::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(120deg, rgba(255,255,255,0.18), transparent 50%);
+  background: linear-gradient(120deg, rgba(255,255,255,0.14), transparent 50%);
   pointer-events: none;
 }
 
@@ -249,39 +280,88 @@ h1, h2 {
 p {
   max-width: 750px;
   line-height: 1.7;
-  color: #ddd;
+  color: var(--ink-soft);
 }
 
-/* HERO */
+/* EYEBROW / PILL LABEL */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 12px;
+}
+
+.eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--magenta-neon);
+  box-shadow: 0 0 10px var(--magenta-neon);
+}
+
 /* HERO */
 .hero {
   min-height: auto;
   padding-top: 140px;
-  padding-bottom: 140px;
+  padding-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   position: relative;
 }
 
-/* HERO GLASS ACCENT (SUBTLE IOS STYLE) */
+/* PILLARS ROW — Design / Print / Branding, mirrors logo tagline */
+.pillars {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.pillar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--ink-soft);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(77,157,255,0.2);
+}
+
+.pillar svg.icon {
+  font-size: 12px;
+  color: var(--blue-bright);
+}
+
+.pillar:nth-child(2) svg.icon { color: var(--magenta-neon); }
+.pillar:nth-child(3) svg.icon { color: var(--purple-accent); }
+
+/* HERO GLASS ACCENT */
 .hero-glass {
   width: 100%;
   max-width: 620px;
   padding: 38px 44px;
   border-radius: 28px;
-  background: rgba(40, 22, 70, 0.28);
+  background: var(--navy-glass);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(77,157,255,0.14);
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.45),
-    0 0 120px rgba(255,59,191,0.12);
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 120px rgba(28,77,255,0.1);
   position: relative;
   overflow: hidden;
 }
 
-/* HERO RIGHT TESTIMONIAL GLASS */
 .hero-wrap {
   display: flex;
   gap: 80px;
@@ -297,16 +377,16 @@ p {
   padding: 44px 42px;
   border-radius: 32px;
 
-  background: rgba(40, 22, 70, 0.32);
+  background: var(--navy-glass);
   backdrop-filter: blur(30px) saturate(200%);
   -webkit-backdrop-filter: blur(30px) saturate(200%);
 
-  border: 1px solid rgba(255,255,255,0.16);
+  border: 1px solid rgba(77,157,255,0.18);
 
   box-shadow:
     0 40px 140px rgba(0,0,0,0.65),
-    inset 0 1px 0 rgba(255,255,255,0.35),
-    0 0 120px rgba(255,59,191,0.35);
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    0 0 120px rgba(255,47,156,0.18);
 
   position: relative;
   overflow: hidden;
@@ -319,14 +399,13 @@ p {
   animation: slowFloatSmall 10s ease-in-out infinite;
 }
 
-/* animated light sweep */
 .testimonial-glass::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(120deg,
     transparent 30%,
-    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.12),
     transparent 60%);
   animation: sweep 6s infinite linear;
   pointer-events: none;
@@ -340,23 +419,22 @@ p {
 .testimonial {
   font-size: 16.5px;
   line-height: 1.85;
-  color: #f3ecf9;
+  color: #eef1fb;
   margin-bottom: 28px;
 }
 
 .testimonial strong {
   display: block;
   margin-top: 10px;
-  color: #ff3bbf;
+  color: var(--blue-bright);
 }
 
-/* hover glow follow */
 .testimonial-glass::after {
   content: "";
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255,59,191,0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(28,77,255,0.3), transparent 70%);
   filter: blur(80px);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -367,7 +445,6 @@ p {
   opacity: 1;
 }
 
-/* soft highlight sheen */
 .hero-glass::before {
   content: "";
   position: absolute;
@@ -375,14 +452,13 @@ p {
   border-radius: inherit;
   background: linear-gradient(
     120deg,
-    rgba(255,255,255,0.18),
-    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.02),
     transparent 60%
   );
   pointer-events: none;
 }
 
-/* ambient glow behind text */
 .hero-glass::after {
   content: "";
   position: absolute;
@@ -390,13 +466,11 @@ p {
   top: 120px;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(255,59,191,0.22), transparent 70%);
+  background: radial-gradient(circle, rgba(28,77,255,0.22), transparent 70%);
   filter: blur(120px);
   z-index: -1;
 }
 
-
-/* subtle floating glow behind hero */
 .hero::after {
   content: "";
   position: absolute;
@@ -404,12 +478,11 @@ p {
   top: 120px;
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(255,59,191,0.25), transparent 70%);
+  background: radial-gradient(circle, rgba(28,77,255,0.22), transparent 70%);
   filter: blur(120px);
   z-index: 0;
 }
 
-/* HERO RIGHT BACKGROUND ACCENT */
 .hero-bg-accent {
   position: absolute;
   right: -220px;
@@ -417,8 +490,8 @@ p {
   width: 520px;
   height: 520px;
   background:
-    radial-gradient(circle at 30% 30%, rgba(123,44,255,0.25), transparent 70%),
-    radial-gradient(circle at 70% 60%, rgba(255,59,191,0.22), transparent 70%);
+    radial-gradient(circle at 30% 30%, rgba(123,59,255,0.22), transparent 70%),
+    radial-gradient(circle at 70% 60%, rgba(255,47,156,0.18), transparent 70%);
   filter: blur(140px);
   animation: slowFloat 14s ease-in-out infinite;
   z-index: 0;
@@ -443,10 +516,10 @@ p {
   margin: 14px 0 30px 0;
   border-radius: 4px;
   background: linear-gradient(90deg,
-    var(--magenta-neon),
-    var(--lavender-soft),
-    var(--purple-electric));
-  box-shadow: 0 0 28px rgba(255,59,191,0.8);
+    var(--blue-electric),
+    var(--blue-bright),
+    var(--magenta-neon));
+  box-shadow: 0 0 28px rgba(28,77,255,0.7);
 }
 
 /* SERVICE TIER COLOR STRIPS */
@@ -466,8 +539,8 @@ p {
 }
 
 .service-card[data-tier="silver"]::before {
-  background: linear-gradient(90deg, #cfd9df, #9b9bff);
-  box-shadow: 0 0 18px rgba(200,200,255,0.6);
+  background: linear-gradient(90deg, #cfd9df, #9bb8ff);
+  box-shadow: 0 0 18px rgba(200,220,255,0.6);
 }
 
 .service-card[data-tier="gold"]::before {
@@ -476,48 +549,49 @@ p {
 }
 
 .service-card[data-tier="diamond"]::before {
-  background: linear-gradient(90deg, #7b2cff, #ff3bbf);
-  box-shadow: 0 0 26px rgba(255,59,191,0.8);
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
+  box-shadow: 0 0 26px rgba(255,47,156,0.7);
 }
 
-/* TESTIMONIAL MICRO TILT */
 .testimonial-glass:hover {
   transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
 }
 
 .hero-logo {
-  width: 150px;
-  margin-bottom: 34px;
-  filter: drop-shadow(0 0 50px rgba(255,59,191,1));
+  width: 200px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 40px rgba(28,77,255,0.55));
 }
 
 .hero h1 {
-  font-size: 56px;
+  font-size: 54px;
+  font-weight: 700;
   background: linear-gradient(120deg,
-    var(--magenta-neon) 0%,
-    var(--lavender-soft) 35%,
-    var(--purple-electric) 70%,
-    var(--magenta-neon) 100%);
+    var(--blue-bright) 0%,
+    var(--blue-electric) 30%,
+    var(--magenta-neon) 65%,
+    var(--purple-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.6px;
-  text-shadow: 0 0 35px rgba(255,59,191,0.35);
+  text-shadow: 0 0 35px rgba(28,77,255,0.25);
 }
 
 .hero h3 {
   margin-top: 10px;
-  color: #ccc;
-  font-weight: normal;
+  color: var(--ink-faint);
+  font-weight: 500;
+  font-size: 17px;
 }
 
 /* GLOW LINE */
 .glow-line {
   width: 150px;
   height: 4px;
-  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
-  margin: 35px 0;
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
+  margin: 30px 0;
   border-radius: 5px;
-  box-shadow: 0 0 25px #ff3bbf;
+  box-shadow: 0 0 25px rgba(28,77,255,0.6);
 }
 
 /* BUTTONS */
@@ -533,32 +607,37 @@ p {
 .btn {
   border: 2px solid transparent;
   background:
-    linear-gradient(#0b0616, #0b0616) padding-box,
-    linear-gradient(90deg, #ff3bbf, #7b2cff) border-box;
+    linear-gradient(#050813, #050813) padding-box,
+    linear-gradient(90deg, var(--blue-electric), var(--magenta-neon)) border-box;
   padding: 14px 34px;
   border-radius: 40px;
-  color: #ff3bbf;
+  color: var(--blue-bright);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-width: 150px;
+  min-height: 44px;
   font-weight: 600;
   white-space: nowrap;
   text-align: center;
   line-height: 1;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 6px 25px rgba(0,0,0,0.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 25px rgba(0,0,0,0.45);
+  font-size: 15px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
   background: linear-gradient(120deg,
-    var(--magenta-neon),
-    var(--lavender-soft),
-    var(--purple-electric)) padding-box;
+    var(--blue-electric),
+    var(--blue-bright),
+    var(--magenta-neon)) padding-box;
   color: black;
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 16px 46px rgba(255,59,191,0.7);
+  box-shadow: 0 16px 46px rgba(28,77,255,0.55);
+  outline: none;
 }
 
 .btn:active {
@@ -566,21 +645,21 @@ p {
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255,59,191,0.6);
+.btn.btn-solid {
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon)) padding-box;
+  color: black;
 }
 
 /* GLASS CARD */
 .glass {
-  background: rgba(20, 10, 40, 0.75);
+  background: rgba(8, 12, 26, 0.78);
   backdrop-filter: blur(22px) saturate(160%);
   border-radius: 34px;
   padding: 34px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(77,157,255,0.12);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   position: relative;
   overflow: hidden;
 }
@@ -594,29 +673,36 @@ p {
   margin-bottom: 14px;
   font-size: 22px;
   background: linear-gradient(120deg,
+    var(--blue-bright),
     var(--magenta-neon),
-    var(--lavender-soft),
-    var(--purple-electric));
+    var(--purple-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 0.4px;
-  text-shadow: 0 0 18px rgba(255,59,191,0.35);
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 18px rgba(28,77,255,0.25);
 }
 
 .glass p {
   margin-top: 16px;
   margin-bottom: 22px;
-}
-
-.glass p br + ✔,
-.glass p {
-  color: #e8ddf5;
+  color: var(--ink-soft);
 }
 
 .glass strong {
-  color: #ff3bbf;
+  color: var(--blue-bright);
   font-weight: 600;
 }
+
+nav::before,
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 40%);
+  pointer-events: none;
+}
+
 /* LOGO PACKAGES OVERRIDE */
 .logo-packages {
   grid-column: span 3;
@@ -637,6 +723,168 @@ p {
   .logo-packages {
     grid-column: span 1;
   }
+
+  .pillars { justify-content: center; }
+}
+
+/* ============ FEATURED PRODUCT SPOTLIGHT ============ */
+.spotlight {
+  margin-top: 40px;
+  border-radius: 42px;
+  padding: 3px;
+  background: linear-gradient(120deg, var(--blue-electric), var(--purple-accent), var(--magenta-neon));
+  box-shadow: 0 40px 140px rgba(0,0,0,0.65), 0 0 160px rgba(28,77,255,0.2);
+}
+
+.spotlight-inner {
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(6,9,20,0.97), rgba(6,9,20,0.99)), var(--navy-deep);
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(77,157,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77,157,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at 20% 30%, black 20%, transparent 80%);
+  pointer-events: none;
+}
+
+.spotlight-media {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background:
+    linear-gradient(135deg, rgba(28,77,255,0.18), rgba(255,47,156,0.14)),
+    var(--navy-mid);
+  border: 1px solid rgba(77,157,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotlight-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Shown only if no product photo has been added yet — replace canopy.jpg to swap this out */
+.spotlight-media .media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: var(--ink-faint);
+  text-align: center;
+  padding: 30px;
+}
+
+.spotlight-media .media-placeholder svg.icon {
+  font-size: 46px;
+  color: var(--blue-bright);
+  filter: drop-shadow(0 0 18px rgba(28,77,255,0.5));
+}
+
+.spotlight-media .media-placeholder span {
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  max-width: 220px;
+  line-height: 1.5;
+}
+
+.spotlight-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
+  color: black;
+  z-index: 2;
+}
+
+.spotlight-content {
+  position: relative;
+  z-index: 1;
+}
+
+.spotlight-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 14px 0 22px 0;
+}
+
+.spotlight-price .amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--blue-bright), var(--magenta-neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.spotlight-price .terms {
+  font-size: 14px;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.spotlight-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 26px 0 8px 0;
+}
+
+.spotlight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.spotlight-list li svg.icon {
+  color: var(--blue-bright);
+  margin-top: 3px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.spotlight .buttons {
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .spotlight-inner {
+    grid-template-columns: 1fr;
+    padding: 34px 26px;
+    gap: 34px;
+    border-radius: 30px;
+  }
+  .spotlight { border-radius: 34px; }
+  .spotlight .buttons { justify-content: center; flex-wrap: wrap; }
+  .spotlight-media { aspect-ratio: 4/3; }
 }
 
 /* PORTFOLIO GLASS FRAME */
@@ -645,16 +893,16 @@ p {
   padding: 50px 50px 60px 50px;
   border-radius: 42px;
 
-  background: rgba(30, 16, 60, 0.35);
+  background: rgba(7, 11, 24, 0.4);
   backdrop-filter: blur(26px) saturate(180%);
   -webkit-backdrop-filter: blur(26px) saturate(180%);
 
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(77,157,255,0.12);
 
   box-shadow:
     0 40px 140px rgba(0,0,0,0.65),
-    inset 0 1px 0 rgba(255,255,255,0.25),
-    0 0 160px rgba(123,44,255,0.25);
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    0 0 160px rgba(28,77,255,0.16);
 
   position: relative;
   overflow: hidden;
@@ -667,7 +915,7 @@ p {
   border-radius: inherit;
   background: linear-gradient(
     120deg,
-    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.1),
     rgba(255,255,255,0.02),
     transparent 60%
   );
@@ -682,7 +930,6 @@ p {
   margin-top: 20px;
 }
 
-/* LOAD MORE PORTFOLIO */
 .portfolio-controls {
   text-align: center;
   margin-top: 40px;
@@ -692,16 +939,16 @@ p {
   display: none;
 }
 
-/* 🔥 CAROUSEL */
+/* CAROUSEL */
 .carousel {
   position: relative;
   overflow: hidden;
   border-radius: 26px;
   margin-bottom: 28px;
   width: 100%;
-  aspect-ratio: 4 / 5;          /* 1080 × 1350 ratio */
-  max-height: 540px;           /* Taller display on desktop */
-  background: transparent;
+  aspect-ratio: 4 / 5;
+  max-height: 540px;
+  background: var(--navy-mid);
 }
 
 .carousel-track {
@@ -715,8 +962,9 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 26px;
-  background: transparent;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  background: var(--navy-mid);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+  cursor: zoom-in;
 }
 
 /* ARROWS */
@@ -724,13 +972,13 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(20, 12, 40, 0.55);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(6, 9, 22, 0.6);
+  border: 1px solid rgba(77,157,255,0.3);
   color: white;
   font-size: 22px;
   border-radius: 50%;
@@ -743,11 +991,13 @@ p {
 .carousel-btn.left { left: 14px; }
 .carousel-btn.right { right: 14px; }
 
-.carousel-btn:hover {
-  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
   color: black;
   transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 12px 30px rgba(255,59,191,0.55);
+  box-shadow: 0 12px 30px rgba(28,77,255,0.5);
+  outline: none;
 }
 
 .carousel-btn:active {
@@ -756,7 +1006,7 @@ p {
 
 /* BADGE */
 .badge {
-  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
   color: black;
   padding: 6px 14px;
   border-radius: 20px;
@@ -775,18 +1025,59 @@ p {
   margin-top: 50px;
 }
 
+.service-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background: rgba(77,157,255,0.08);
+  border: 1px solid rgba(77,157,255,0.25);
+  color: var(--blue-bright);
+  font-size: 18px;
+}
+
 /* CONTACT */
-.contact-links a {
-  display: inline-block;
-  margin-right: 30px;
-  font-size: 22px;
+.contact-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
   margin-top: 25px;
-  color: #ff3bbf;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: rgba(77,157,255,0.06);
+  border: 1px solid rgba(77,157,255,0.22);
   transition: 0.3s;
 }
 
-.contact-links a:hover {
-  color: white;
+.contact-links a svg.icon {
+  color: var(--blue-bright);
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
+  color: black;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.contact-links a:hover svg.icon,
+.contact-links a:focus-visible svg.icon {
+  color: black;
 }
 
 /* CTA */
@@ -799,8 +1090,16 @@ p {
 footer {
   text-align: center;
   padding: 40px;
-  color: #aaa;
-  background: rgba(0,0,0,0.4);
+  color: var(--ink-faint);
+  background: rgba(0,0,0,0.5);
+  border-top: 1px solid rgba(77,157,255,0.1);
+}
+
+footer img {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 8px;
+  opacity: 0.85;
 }
 
 /* MOBILE */
@@ -808,14 +1107,17 @@ footer {
   nav {
     position: fixed;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
     width: calc(100% - 24px);
     max-width: none;
+    margin: 0 auto;
     padding: 10px 16px;
     border-radius: 20px;
     flex-direction: column;
     gap: 10px;
+    animation: none !important;
   }
 
   .nav-left {
@@ -839,94 +1141,16 @@ footer {
     padding: 6px 14px;
   }
 
-  .hero h1 { 
-    font-size: 38px; 
+  .hero h1 {
+    font-size: 38px;
   }
 
-  section { 
-    padding: 80px 6%; 
+  section {
+    padding: 80px 6%;
   }
 
   .hero {
     padding-top: 160px;
-  }
-
-  .hero-glass {
-    padding: 30px 26px;
-    max-width: 100%;
-    border-radius: 24px;
-  }
-
-  .hero-wrap {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .testimonial-glass {
-    width: 100%;
-    min-height: auto;
-    padding: 32px 28px;
-  }
-}
-
-/* SUBTLE GLASS SHEEN */
-nav::before,
-.glass::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(120deg, rgba(255,255,255,0.12), transparent 40%);
-  pointer-events: none;
-}
-
-/* IOS-STYLE GLASS MOTION */
-nav {
-  will-change: transform;
-}
-
-nav:hover {
-  backdrop-filter: blur(28px) saturate(200%);
-}
-
-.glass:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 80px rgba(0,0,0,0.55);
-}
-
-@keyframes dockFloat {
-  0% { transform: translateX(-50%) translateY(0px); }
-  50% { transform: translateX(-50%) translateY(-6px); }
-  100% { transform: translateX(-50%) translateY(0px); }
-}
-
-nav {
-  animation: dockFloat 10s ease-in-out infinite;
-}
-
-/* =========================
-   🔥 MOBILE POLISH UPGRADE
-   ========================= */
-
-@media (max-width: 768px) {
-
-  nav {
-    padding: 10px 5%;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .nav-links {
-    gap: 6px;
-  }
-
-  .nav-links a {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .hero {
-    padding-top: 120px;
     padding-bottom: 80px;
   }
 
@@ -937,15 +1161,12 @@ nav {
 
   .hero-glass {
     padding: 28px 24px;
+    max-width: 100%;
     border-radius: 22px;
   }
 
   .hero-logo {
-    width: 120px;
-  }
-
-  .hero h1 {
-    font-size: 40px;
+    width: 150px;
   }
 
   .hero h3 {
@@ -955,12 +1176,9 @@ nav {
   .testimonial-glass {
     width: 100%;
     max-width: 100%;
+    min-height: auto;
     padding: 30px 26px;
     border-radius: 24px;
-  }
-
-  section {
-    padding: 70px 6%;
   }
 
   h2 {
@@ -978,39 +1196,25 @@ nav {
   }
 
   .carousel {
-    max-height: 300px;
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
   }
 
   .services {
     grid-template-columns: 1fr;
     gap: 28px;
     align-items: stretch;
-  }
-  /* FIX SERVICE CARD OVERLAP */
-  .services {
     grid-auto-rows: auto;
   }
 
   .glass {
     margin-bottom: 24px;
-  }
-
-  /* Prevent large logo package container from spanning columns on mobile */
-  .glass[style] {
-    grid-column: span 1 !important;
-  }
-
-  .glass {
     padding: 26px;
     border-radius: 26px;
   }
 
-  #services .glass h2 {
-    font-size: 26px;
-  }
-
-  #services .services .glass {
-    padding: 24px;
+  .glass[style] {
+    grid-column: span 1 !important;
   }
 
   .buttons {
@@ -1025,17 +1229,11 @@ nav {
   }
 
   .contact-links a {
-    font-size: 18px;
-    margin-right: 20px;
+    font-size: 14px;
+    padding: 10px 18px;
   }
 }
-/* MOBILE CAROUSEL PORTRAIT FIX */
-@media (max-width: 768px) {
-  .carousel {
-    aspect-ratio: 4 / 5;
-    max-height: 420px;
-  }
-}
+
 /* REDUCE MOTION SUPPORT */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -1043,101 +1241,8 @@ nav {
     transition: none !important;
   }
 }
-/* FULLSCREEN MODAL (CERT + CAROUSEL) */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 5000;
-}
 
-/* PREVIEW NOTE (CLICK TO VIEW FULL PREVIEW) */
-.preview-note {
-  position: absolute;
-  top: 12px;
-  left: 16px;
-  padding: 6px 14px;
-  font-size: 12px;
-  border-radius: 999px;
-  background: rgba(20,12,40,0.75);
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #ff3bbf;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-  pointer-events: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-.modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 18px;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
-}
-
-.modal-close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.modal-close:hover {
-  color: #ff3bbf;
-}
-.modal-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(20,12,40,0.6);
-  backdrop-filter: blur(12px);
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 5100;
-  transition: 0.25s ease;
-}
-
-.modal-prev { left: 40px; }
-.modal-next { right: 40px; }
-
-.modal-nav:hover {
-  background: linear-gradient(90deg, #ff3bbf, #7b2cff);
-  color: black;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 14px 40px rgba(255,59,191,0.6);
-}
-.modal.cert-only .modal-prev,
-.modal.cert-only .modal-next {
-  display: none;
-}
-.carousel-track img {
-  cursor: zoom-in;
-}
-  @media (max-width: 768px) {
-  nav {
-    left: 0 !important;
-    right: 0 !important;
-    transform: none !important;
-    margin: 0 auto;
-    animation: none !important;
-  }
-}
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   * {
     animation: none !important;
     transform-style: flat !important;
@@ -1149,20 +1254,270 @@ nav {
     display: none !important;
   }
 }
+
+/* FULLSCREEN MODAL (CERT + CAROUSEL) */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+.preview-note {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: rgba(6,9,22,0.8);
+  border: 1px solid rgba(77,157,255,0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--blue-bright);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  pointer-events: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 18px;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.85);
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  background: none;
+  border: none;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  color: var(--magenta-neon);
+  outline: none;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(77,157,255,0.3);
+  background: rgba(6,9,22,0.65);
+  backdrop-filter: blur(12px);
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 5100;
+  transition: 0.25s ease;
+}
+
+.modal-prev { left: 40px; }
+.modal-next { right: 40px; }
+
+.modal-nav:hover,
+.modal-nav:focus-visible {
+  background: linear-gradient(90deg, var(--blue-electric), var(--magenta-neon));
+  color: black;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 14px 40px rgba(28,77,255,0.55);
+  outline: none;
+}
+
+.modal.cert-only .modal-prev,
+.modal.cert-only .modal-next {
+  display: none;
+}
+
+/* iOS-style glass motion */
+nav {
+  will-change: transform;
+}
+
+nav:hover {
+  backdrop-filter: blur(28px) saturate(200%);
+}
+
+.glass:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.6);
+}
+
+@keyframes dockFloat {
+  0% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+  100% { transform: translateX(-50%) translateY(0px); }
+}
+
+nav {
+  animation: dockFloat 10s ease-in-out infinite;
+}
+
+/* Skip link for keyboard/screen-reader users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--blue-electric);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 20px;
+  top: 20px;
+}
+
+/* INLINE SVG ICON SYSTEM (no external font/icon dependency) */
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 </style>
 </head>
 
 <body>
+
+<!-- INLINE ICON SPRITE — self-contained, no external font/CDN dependency -->
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="icon-envelope" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="M3 7l9 6 9-6"/>
+    </symbol>
+    <symbol id="icon-envelope-open" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="M3 7l9 6 9-6"/>
+      <path d="M3 19l7-7"/>
+      <path d="M21 19l-7-7"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="4.2"/>
+      <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-design" viewBox="0 0 24 24">
+      <path d="M17.5 3.5a2.1 2.1 0 0 1 3 3L8 19 3 20.5 4.5 15.5 17.5 3.5z"/>
+      <path d="M15 6l3 3"/>
+    </symbol>
+    <symbol id="icon-print" viewBox="0 0 24 24">
+      <path d="M6 9V3h12v6"/>
+      <rect x="4" y="9" width="16" height="7" rx="1.5"/>
+      <path d="M8 16h8v5H8z"/>
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5"/>
+      <circle cx="12" cy="12" r="5"/>
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M7.5 12.5l3 3 6-6.5"/>
+    </symbol>
+    <symbol id="icon-image" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2.5"/>
+      <circle cx="8.5" cy="8.5" r="1.6" fill="currentColor" stroke="none"/>
+      <path d="M21 15.5l-5.5-5.5L5 21"/>
+    </symbol>
+    <symbol id="icon-shapes" viewBox="0 0 24 24">
+      <rect x="2.5" y="12.5" width="8.5" height="8.5" rx="1.5"/>
+      <circle cx="16" cy="8" r="5.5"/>
+    </symbol>
+    <symbol id="icon-palette" viewBox="0 0 24 24">
+      <path d="M12 3a9 9 0 1 0 8.94 10.08c.2-1.6-1.1-2.58-2.6-2.58h-2.1a2.1 2.1 0 0 1-2.1-2.1c0-.62.26-1.1.58-1.63.34-.56.62-1.1.62-1.77A2 2 0 0 0 12 3z"/>
+      <circle cx="7.3" cy="10.3" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="8.7" cy="6.7" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="12.8" cy="6" r="1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-mobile" viewBox="0 0 24 24">
+      <rect x="7" y="2" width="10" height="20" rx="2"/>
+      <circle cx="12" cy="18" r="0.9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-idcard" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="2"/>
+      <circle cx="8" cy="11" r="2"/>
+      <path d="M5 16.5c0-1.8 1.3-3 3-3s3 1.2 3 3"/>
+      <path d="M14 9.5h5"/>
+      <path d="M14 13.5h5"/>
+    </symbol>
+    <symbol id="icon-box" viewBox="0 0 24 24">
+      <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+      <path d="M3 8l9 5 9-5"/>
+      <path d="M12 13v8"/>
+    </symbol>
+    <symbol id="icon-tent" viewBox="0 0 24 24">
+      <path d="M12 3l9 17H3L12 3z"/>
+      <path d="M12 3v17"/>
+      <path d="M8 13l4-6 4 6"/>
+    </symbol>
+    <symbol id="icon-utensils" viewBox="0 0 24 24">
+      <path d="M6 2v7a2 2 0 0 0 4 0V2"/>
+      <path d="M8 9v13"/>
+      <path d="M17 2c-2 0-3 2.5-3 5.5S15 12 17 12v10"/>
+    </symbol>
+    <symbol id="icon-video" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+      <path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-invoice" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="2"/>
+      <path d="M8.5 7.5h7"/>
+      <path d="M8.5 11.5h7"/>
+      <path d="M8.5 15.5h4"/>
+      <circle cx="15" cy="17.5" r="2.2"/>
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="4"/>
+      <path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <div class="main-bg">
 <div class="overlay">
 
+<div class="blueprint-grid"></div>
 <div class="blob one"></div>
 <div class="blob two"></div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-left">
-    <img src="logo.png" loading="eager" decoding="async">
+    <img src="logo.png" alt="Visualet Designs logo" loading="eager" decoding="async" width="44" height="44">
     <strong>Visualet Designs</strong>
   </div>
   <div class="nav-links">
@@ -1173,16 +1528,24 @@ nav {
   </div>
 </nav>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section class="hero">
 <div class="hero-bg-accent"></div>
   <div class="hero-wrap">
 
     <div class="hero-glass">
-      <img src="logo.png" class="hero-logo" style="width:180px;" loading="lazy" decoding="async">
+      <img src="logo.png" class="hero-logo" alt="Visualet Designs — Design, Print, Branding" loading="lazy" decoding="async">
       <h1>Nathan Salamanca</h1>
       <h3>Founder of Visualet Designs</h3>
-      <p>Freelance Graphic Designer • Logos • Branding • Social Media</p>
+      <p>Freelance Graphic Designer building bold brand identities — logos, packaging, print, and social media design.</p>
+
+      <div class="pillars">
+        <span class="pillar"><svg class="icon" aria-hidden="true"><use href="#icon-design"></use></svg> Design</span>
+        <span class="pillar"><svg class="icon" aria-hidden="true"><use href="#icon-print"></use></svg> Print</span>
+        <span class="pillar"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg> Branding</span>
+      </div>
 
       <div class="glow-line"></div>
 
@@ -1197,7 +1560,7 @@ nav {
       <h3 style="margin-bottom:20px; font-size:22px; letter-spacing:0.4px;">What Clients Say</h3>
 
       <div class="testimonial">
-        “Visualet Designs completely transformed our brand.  
+        “Visualet Designs completely transformed our brand.
         The logo and visuals instantly made us look professional.”
         <strong>— Aqualifts Founder</strong>
       </div>
@@ -1216,9 +1579,64 @@ nav {
   </div>
 </section>
 
+<!-- FEATURED PRODUCT: EVENT CANOPY -->
+<section id="featured">
+<div class="eyebrow"><span class="dot"></span>New Category</div>
+<h2>Featured Product</h2>
+<p style="max-width:720px; margin-bottom:10px; color:#ccc;">
+Beyond logos and branding — a full design-to-print product, built and shipped for your next event.
+</p>
+<div class="section-accent"></div>
+
+<div class="spotlight">
+  <div class="spotlight-inner">
+
+    <div class="spotlight-media">
+      <div class="spotlight-badge">Design + Print</div>
+      <!--
+        TO ADD YOUR PRODUCT PHOTO:
+        1. Upload your canopy photo as "canopy.jpg" next to this HTML file.
+        2. Delete the <div class="media-placeholder"> block below.
+        3. Uncomment the <img> tag below it.
+      -->
+      <div class="media-placeholder">
+        <svg class="icon" aria-hidden="true"><use href="#icon-image"></use></svg>
+        <span>Add your canopy photo here — save it as <strong>canopy.jpg</strong> in this folder</span>
+      </div>
+      <!-- <img src="canopy.jpg" alt="Custom 10 by 10 foot printed event canopy" loading="lazy" decoding="async"> -->
+    </div>
+
+    <div class="spotlight-content">
+      <div class="eyebrow"><span class="dot"></span>Event Canopies</div>
+      <h2 style="margin-bottom:8px;">Custom 10' × 10' Event Canopy</h2>
+      <p style="margin-bottom:0;">Complete design &amp; print package — your brand, full color, ready to set up at your next event.</p>
+
+      <div class="spotlight-price">
+        <span class="amount">$600</span>
+        <span class="terms">flat rate</span>
+      </div>
+
+      <ul class="spotlight-list">
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Full custom design service</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Professional file preparation</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Full color printed canopy</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> 10' × 10' heavy-duty aluminum event tent frame</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> High-quality weather-resistant print</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> 3–7 business day turnaround</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Shipping included</li>
+      </ul>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-solid">Get Started</a>
+        <a href="mailto:visualetdesigns@gmail.com?subject=Event%20Canopy%20Inquiry" class="btn">Ask a Question</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
 <!-- PORTFOLIO -->
-
-
 <section id="portfolio">
 <h2>Featured Projects</h2>
 <p style="max-width:720px; margin-bottom:20px; color:#ccc;">
@@ -1235,26 +1653,23 @@ A selection of branding, logo, and visual design projects focused on clean aesth
   <h3>Aqualifts — Custom Branding & Carousel</h3>
 
   <div class="carousel" data-carousel>
-      <div class="preview-note">Click to view full preview 
-        
-      </div>
+      <div class="preview-note">Click to view full preview</div>
     <div class="carousel-track">
-      <img src="aqua1.jpg" loading="lazy" decoding="async">
-      <img src="aqua2.jpg" loading="lazy" decoding="async">
-      <img src="aqua3.jpg" loading="lazy" decoding="async">
-      <img src="aqua4.jpg" loading="lazy" decoding="async">
-      <img src="aqua5.jpg" loading="lazy" decoding="async">
+      <img src="aqua1.jpg" alt="Aqualifts branding — slide 1" loading="lazy" decoding="async">
+      <img src="aqua2.jpg" alt="Aqualifts branding — slide 2" loading="lazy" decoding="async">
+      <img src="aqua3.jpg" alt="Aqualifts branding — slide 3" loading="lazy" decoding="async">
+      <img src="aqua4.jpg" alt="Aqualifts branding — slide 4" loading="lazy" decoding="async">
+      <img src="aqua5.jpg" alt="Aqualifts branding — slide 5" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
-    
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
-  <p>Full brand identity and carousel campaign designed for a performance hydration drink targeting athletes and gym-goers.  
+  <p>Full brand identity and carousel campaign designed for a performance hydration drink targeting athletes and gym-goers.
 Focused on bold visuals, product clarity, and high-conversion social content.</p>
 
   <div class="buttons">
-    <a href="https://www.instagram.com/p/DC2zkDbPEEZ/" target="_blank" class="btn">View Post</a>
+    <a href="https://www.instagram.com/p/DC2zkDbPEEZ/" target="_blank" rel="noopener" class="btn">View Post</a>
     <a href="#contact" class="btn">Start a Project</a>
   </div>
 </div>
@@ -1265,20 +1680,18 @@ Focused on bold visuals, product clarity, and high-conversion social content.</p
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="looma1.jpg" loading="lazy" decoding="async">
-      <img src="looma2.jpg" loading="lazy" decoding="async">
-      <img src="looma3.jpg" loading="lazy" decoding="async">
+      <img src="looma1.jpg" alt="Looma Candles branding — slide 1" loading="lazy" decoding="async">
+      <img src="looma2.jpg" alt="Looma Candles branding — slide 2" loading="lazy" decoding="async">
+      <img src="looma3.jpg" alt="Looma Candles branding — slide 3" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
-  <p> <p>
-Brand identity system developed for a lifestyle candle brand, including logo design, color palette, packaging concepts, and social media visuals.
-</p></p>
+  <p>Brand identity system developed for a lifestyle candle brand, including logo design, color palette, packaging concepts, and social media visuals.</p>
 
   <div class="buttons">
-    <a href="https://www.instagram.com/p/DO2UEJGkdG3/" target="_blank" class="btn">View Post</a>
+    <a href="https://www.instagram.com/p/DO2UEJGkdG3/" target="_blank" rel="noopener" class="btn">View Post</a>
     <a href="#contact" class="btn">Start a Project</a>
   </div>
 </div>
@@ -1289,35 +1702,35 @@ Brand identity system developed for a lifestyle candle brand, including logo des
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="grove1.jpg" loading="lazy" decoding="async">
-      <img src="grove2.jpg" loading="lazy" decoding="async">
-      
+      <img src="grove1.jpg" alt="Grove Tea House packaging — slide 1" loading="lazy" decoding="async">
+      <img src="grove2.jpg" alt="Grove Tea House packaging — slide 2" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
   <p>Custom logo and pouch packaging design for a specialty tea brand focused on premium, natural presentation.
 
 This project involved creating a custom logo identity and extending it into a clean, modern packaging system designed to communicate quality, freshness, and trust. The layout was carefully structured to balance branding, flavor information, and visual hierarchy for strong shelf presence and easy readability.
 
-Final deliverables were prepared as print-ready packaging and logo files, optimized for production and future flavor variations..</p>
+Final deliverables were prepared as print-ready packaging and logo files, optimized for production and future flavor variations.</p>
 </div>
+
 <!-- PROJECT TEMPLATE -->
 <div class="glass project-hidden">
   <h3>Premium Service Guaranteed (PSG) — Logo & Business Card Design</h3>
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="psg2.jpg" loading="lazy" decoding="async">
-      <img src="psg1.jpg" loading="lazy" decoding="async">
-      <img src="psg3.jpg" loading="lazy" decoding="async">
+      <img src="psg2.jpg" alt="PSG branding — slide 1" loading="lazy" decoding="async">
+      <img src="psg1.jpg" alt="PSG branding — slide 2" loading="lazy" decoding="async">
+      <img src="psg3.jpg" alt="PSG branding — slide 3" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
-  <p> Custom logo and business card design for a mobile auto detailing brand focused on professionalism, trust, and premium service.
+  <p>Custom logo and business card design for a mobile auto detailing brand focused on professionalism, trust, and premium service.
 
 This project included developing a custom logo identity that reflects quality, reliability, and attention to detail, followed by a matching business card system designed for strong first impressions and consistent branding across client interactions.
 
@@ -1326,21 +1739,20 @@ Final deliverables were prepared as print-ready logo and business card files, op
 
 <!-- PROJECT TEMPLATE -->
 <div class="glass project-hidden">
-  <h3> Bonehead Donuts — Full Brand Identity & Packaging
-</h3>
+  <h3>Bonehead Donuts — Full Brand Identity & Packaging</h3>
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="bone1.jpg" loading="lazy" decoding="async">
-      <img src="bone2.jpg" loading="lazy" decoding="async">
-      <img src="bone3.jpg" loading="lazy" decoding="async">
-      <img src="bone4.jpg" loading="lazy" decoding="async">
-      <img src="bone5.jpg" loading="lazy" decoding="async">
-      <img src="bone6.jpg" loading="lazy" decoding="async">
-       <img src="bone7.jpg" loading="lazy" decoding="async">
+      <img src="bone1.jpg" alt="Bonehead Donuts branding — slide 1" loading="lazy" decoding="async">
+      <img src="bone2.jpg" alt="Bonehead Donuts branding — slide 2" loading="lazy" decoding="async">
+      <img src="bone3.jpg" alt="Bonehead Donuts branding — slide 3" loading="lazy" decoding="async">
+      <img src="bone4.jpg" alt="Bonehead Donuts branding — slide 4" loading="lazy" decoding="async">
+      <img src="bone5.jpg" alt="Bonehead Donuts branding — slide 5" loading="lazy" decoding="async">
+      <img src="bone6.jpg" alt="Bonehead Donuts branding — slide 6" loading="lazy" decoding="async">
+      <img src="bone7.jpg" alt="Bonehead Donuts branding — slide 7" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
   <p>This project included a custom logo design, full branding system, and extended applications across donut packaging, box design, cup design, and branded merchandise. I also created social media graphics and carousel designs to ensure visual consistency across digital platforms.
@@ -1354,11 +1766,11 @@ Final deliverables were prepared as print-ready packaging files and digital asse
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="aero1.jpg" loading="lazy" decoding="async">
-      <img src="aero2.jpg" loading="lazy" decoding="async">
+      <img src="aero1.jpg" alt="Aero Wave concept — slide 1" loading="lazy" decoding="async">
+      <img src="aero2.jpg" alt="Aero Wave concept — slide 2" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
   <p>A modern concept product design focused on sleek aesthetics, portability, and premium feel.
@@ -1368,22 +1780,22 @@ This project explored logo design, product styling, and visual branding, showcas
 
 <!-- PROJECT TEMPLATE -->
 <div class="glass project-hidden">
-  <h3> Fur Members Only — Branding Design</h3>
+  <h3>Fur Members Only — Branding Design</h3>
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="fur1.jpg" loading="lazy" decoding="async">
-      <img src="fur2.jpg" loading="lazy" decoding="async">
-      <img src="fur3.jpg" loading="lazy" decoding="async">
-       <img src="fur4.jpg" loading="lazy" decoding="async">
+      <img src="fur1.jpg" alt="Fur Members Only branding — slide 1" loading="lazy" decoding="async">
+      <img src="fur2.jpg" alt="Fur Members Only branding — slide 2" loading="lazy" decoding="async">
+      <img src="fur3.jpg" alt="Fur Members Only branding — slide 3" loading="lazy" decoding="async">
+      <img src="fur4.jpg" alt="Fur Members Only branding — slide 4" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
   <p>A playful yet professional branding concept designed for a pet-focused business.
 
-This project features custom logo design, brand identity development, and visual styling, crafted to feel friendly, trustworthy, and modern. Created by Visualet Designs to showcase how strong branding can connect emotionally with pet owners while remaining polished and scalable..</p>
+This project features custom logo design, brand identity development, and visual styling, crafted to feel friendly, trustworthy, and modern. Created by Visualet Designs to showcase how strong branding can connect emotionally with pet owners while remaining polished and scalable.</p>
 </div>
 
 <!-- PROJECT TEMPLATE -->
@@ -1392,18 +1804,17 @@ This project features custom logo design, brand identity development, and visual
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="her1.jpg" loading="lazy" decoding="async">
-      <img src="her2.jpg" loading="lazy" decoding="async">
-      <img src="her3.jpg" loading="lazy" decoding="async">
+      <img src="her1.jpg" alt="Herbloom branding — slide 1" loading="lazy" decoding="async">
+      <img src="her2.jpg" alt="Herbloom branding — slide 2" loading="lazy" decoding="async">
+      <img src="her3.jpg" alt="Herbloom branding — slide 3" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
   <p>A clean and modern branding project created to bring an herbal shampoo concept to life.
 
-This project features an elegant logo design, sleek packaging, and a cohesive brand identity, using organic inspiration, earthy tones, and refined typography to create a natural yet luxurious feel. Designed by Visualet Designs to help emerging brands stand out and connect with their audience.
-</p>
+This project features an elegant logo design, sleek packaging, and a cohesive brand identity, using organic inspiration, earthy tones, and refined typography to create a natural yet luxurious feel. Designed by Visualet Designs to help emerging brands stand out and connect with their audience.</p>
 </div>
 
 <!-- PROJECT TEMPLATE -->
@@ -1412,18 +1823,16 @@ This project features an elegant logo design, sleek packaging, and a cohesive br
 
   <div class="carousel" data-carousel>
     <div class="carousel-track">
-      <img src="water1.jpg" loading="lazy" decoding="async">
-      <img src="water2.jpg" loading="lazy" decoding="async">
-      
+      <img src="water1.jpg" alt="Waterscape Pools & Spas business card — slide 1" loading="lazy" decoding="async">
+      <img src="water2.jpg" alt="Waterscape Pools & Spas business card — slide 2" loading="lazy" decoding="async">
     </div>
-    <button class="carousel-btn left">‹</button>
-    <button class="carousel-btn right">›</button>
+    <button class="carousel-btn left" aria-label="Previous image">‹</button>
+    <button class="carousel-btn right" aria-label="Next image">›</button>
   </div>
 
   <p>A professional business card design created for Waterscape Pools & Spas Inc, focusing on clarity, trust, and a clean aquatic aesthetic.
 
-The design features balanced typography, brand-aligned colors, and a polished layout, ensuring a strong first impression and a professional look that reflects the company’s quality services.
-</p>
+The design features balanced typography, brand-aligned colors, and a polished layout, ensuring a strong first impression and a professional look that reflects the company's quality services.</p>
 </div>
 
     </div>
@@ -1442,18 +1851,17 @@ The design features balanced typography, brand-aligned colors, and a polished la
 
   <div class="about-text">
     <p>
-Hi, I’m Nathan 👋 founder of Visualet Designs. Over the past few years, I’ve been helping brands elevate their look through clean, bold, and thoughtful design. I specialize in logo design and branding, focusing on visuals that feel modern, intentional, and easy to connect with.
+Hi, I'm Nathan 👋 founder of Visualet Designs. Over the past few years, I've been helping brands elevate their look through clean, bold, and thoughtful design. I specialize in logo design and branding, focusing on visuals that feel modern, intentional, and easy to connect with.
 
 I work with industry-level tools like Adobe Photoshop and Adobe Illustrator to create strong visual identities that help businesses look more professional and stand out with confidence. Every project I take on is approached with attention to detail and a clear design purpose — no templates, just custom work made to fit each brand.
 
-Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pushing my creative skills forward. I’m always learning, experimenting, and refining my style to deliver better work with every project.
+Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pushing my creative skills forward. I'm always learning, experimenting, and refining my style to deliver better work with every project.
     </p>
-
   </div>
 
   <!-- HEADSHOT -->
 <div class="headshot-placeholder">
-  <img src="possibleheadshot.jpg" alt="Nathan Salamanca headshot">
+  <img src="possibleheadshot.jpg" alt="Nathan Salamanca headshot" loading="lazy" decoding="async">
 </div>
 
 </div>
@@ -1468,7 +1876,7 @@ Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pus
 
   <div class="glass cert-card">
     <h3>Adobe Certified Professional</h3>
-    <p><strong>Photoshop — May 21th, 2025</strong></p>
+    <p><strong>Photoshop — May 21st, 2025</strong></p>
     <p>
     ✔ Official Adobe Certification<br>
     ✔ Advanced Photoshop Skills<br>
@@ -1491,6 +1899,7 @@ Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pus
 <div class="services">
 
 <div class="glass">
+<div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shapes"></use></svg></div>
 <h3>Logo Design</h3>
 <p><strong>Starting at $50</strong></p>
 <p>✔ Custom Concepts<br>✔ Revisions<br>✔ Fast Delivery</p>
@@ -1543,60 +1952,78 @@ Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pus
 </div>
 
 <div class="glass">
+<div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-palette"></use></svg></div>
 <h3>Brand Starter Pack</h3>
 <p><strong>Starting at $150</strong></p>
 <p>✔ Logo<br>✔ Social Graphics<br>✔ Brand Identity</p>
 </div>
 
 <div class="glass">
+<div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-mobile"></use></svg></div>
 <h3>Social Media Design</h3>
 <p><strong>$50 per design</strong></p>
 <p>✔ Instagram<br>✔ Flyers<br>✔ Promo Content</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-idcard"></use></svg></div>
   <h3>Business Cards</h3>
   <p><strong>Design • Print • Ship</strong></p>
   <p>✔ Front & Back Design<br>✔ Print-Ready Files<br>✔ Shipping Included</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-box"></use></svg></div>
   <h3>Product Packaging Design</h3>
   <p><strong>Custom Packaging</strong></p>
   <p>✔ Box / Label Design<br>✔ Print-Ready Layouts<br>✔ Brand Matching</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-tent"></use></svg></div>
+  <h3>Event Canopy Design</h3>
+  <p><strong>$600 Flat Package</strong></p>
+  <p>✔ 10' × 10' Printed Canopy<br>✔ Aluminum Frame<br>✔ Shipping Included</p>
+  <div class="buttons"><a href="#featured" class="btn">See Details</a></div>
+</div>
+
+<div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-image"></use></svg></div>
   <h3>Flyer / Poster Design</h3>
   <p><strong>Promotional Graphics</strong></p>
   <p>✔ Event Flyers<br>✔ Posters<br>✔ Social Versions Included</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-utensils"></use></svg></div>
   <h3>Menu Design</h3>
   <p><strong>Restaurants & Cafes</strong></p>
   <p>✔ Clean Layouts<br>✔ Print + Digital Versions<br>✔ Brand Styled</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-video"></use></svg></div>
   <h3>Video Design</h3>
   <p><strong>Short-Form & Promo</strong></p>
   <p>✔ Reels / Shorts<br>✔ Motion Graphics<br>✔ Brand Overlays</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-invoice"></use></svg></div>
   <h3>Invoice Design</h3>
   <p><strong>Professional Templates</strong></p>
   <p>✔ Custom Layout<br>✔ Editable Format<br>✔ Brand Colors</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-envelope-open"></use></svg></div>
   <h3>Email Signature Design</h3>
   <p><strong>Clean & Modern</strong></p>
   <p>✔ Clickable Links<br>✔ Logo + Social Icons<br>✔ Multi-Format Export</p>
 </div>
 
 <div class="glass">
+  <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#icon-play"></use></svg></div>
   <h3>Social Media Graphics / YouTube Banner</h3>
   <p><strong>Channel & Profile Branding</strong></p>
   <p>✔ Profile Banners<br>✔ Cover Art<br>✔ Platform Optimized</p>
@@ -1607,13 +2034,13 @@ Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pus
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>Let’s Work Together</h2>
+<h2>Let's Work Together</h2>
 <div class="section-accent"></div>
 <p>Ready to elevate your brand? I usually respond within 24 hours.</p>
 
 <div class="contact-links">
-<a href="mailto:visualetdesigns@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-<a href="https://instagram.com/visualetdesigns" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="mailto:visualetdesigns@gmail.com"><svg class="icon" aria-hidden="true"><use href="#icon-envelope"></use></svg> Email</a>
+<a href="https://instagram.com/visualetdesigns" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg> Instagram</a>
 </div>
 
 <div class="cta">
@@ -1624,16 +2051,22 @@ Outside of design, I enjoy hiking, going to the gym, cooking, and constantly pus
 </div>
 </section>
 
-<footer>
-© 2026 Visualet Designs — Designed by Nathan Salamanca
- </footer>
+</main>
 
-<!-- CERTIFICATE MODAL -->
+<footer>
+<img src="logo.png" alt="" loading="lazy" decoding="async">
+© 2026 Visualet Designs — Designed by Nathan Salamanca
+</footer>
+
+<!-- CERTIFICATE / IMAGE MODAL -->
 <div id="cert-modal" class="modal">
-  <button class="modal-nav modal-prev">‹</button>
-  <span class="modal-close">&times;</span>
-  <img id="cert-image" src="">
-  <button class="modal-nav modal-next">›</button>
+  <button class="modal-nav modal-prev" aria-label="Previous image">‹</button>
+  <button class="modal-close" aria-label="Close preview">&times;</button>
+  <img id="cert-image" src="" alt="Enlarged preview">
+  <button class="modal-nav modal-next" aria-label="Next image">›</button>
+</div>
+
+</div>
 </div>
 
 <script>
@@ -1684,6 +2117,7 @@ if (loadBtn) {
     loadBtn.style.display = 'none';
   });
 }
+
 /* CERTIFICATE VIEWER */
 const certModal = document.getElementById('cert-modal');
 const certImage = document.getElementById('cert-image');
@@ -1705,6 +2139,13 @@ certModal.onclick = e => {
   if (e.target === certModal) certModal.style.display = 'none';
 };
 
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && certModal.style.display === 'flex') {
+    certModal.style.display = 'none';
+    certModal.classList.remove('cert-only');
+  }
+});
+
 /* FULLSCREEN CAROUSEL PREVIEW */
 let modalImages = [];
 let modalIndex = 0;
@@ -1714,6 +2155,7 @@ function openModal(images, index) {
   modalImages = images;
   modalIndex = index;
   certImage.src = modalImages[modalIndex].src;
+  certImage.alt = modalImages[modalIndex].alt || 'Enlarged preview';
   certModal.style.display = 'flex';
 }
 
@@ -1733,15 +2175,15 @@ const nextBtn = document.querySelector('.modal-next');
 prevBtn.onclick = () => {
   modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
   certImage.src = modalImages[modalIndex].src;
+  certImage.alt = modalImages[modalIndex].alt || 'Enlarged preview';
 };
 
 nextBtn.onclick = () => {
   modalIndex = (modalIndex + 1) % modalImages.length;
   certImage.src = modalImages[modalIndex].src;
+  certImage.alt = modalImages[modalIndex].alt || 'Enlarged preview';
 };
 </script>
 
-</div>
-</div>
 </body>
 </html>
